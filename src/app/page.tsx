@@ -9,8 +9,8 @@ async function Images() {
     orderBy: (model, {desc}) => desc(model.id),
   });
   return <div className="flex flex-wrap gap-4">
-    {[...images, ...images, ...images, ...images].map((image, index) => (
-        <div key={image.id + " - " + index} className="flex flex-col w-48">
+    {images.map((image) => (
+        <div key={image.id} className="flex flex-col w-48">
           <img src={image.url} alt={image.name}/>
           <div>{image.name}</div>
         </div>
