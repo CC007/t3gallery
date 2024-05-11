@@ -21,9 +21,12 @@ export const createTable = pgTableCreator((name) => `t3gallery_${name}`);
 export const images = createTable(
   "image",
   {
-    id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }).notNull(),
-    url: varchar("url", { length: 1024 }).notNull(),
+    id: serial("id")
+      .primaryKey(),
+    name: varchar("name", { length: 256 })
+      .notNull(),
+    url: varchar("url", { length: 1024 })
+      .notNull(),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
